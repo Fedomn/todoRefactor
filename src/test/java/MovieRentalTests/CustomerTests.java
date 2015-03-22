@@ -1,8 +1,8 @@
 package MovieRentalTests;
 
-import com.fedomn.todoRefactor.MovieRental.V0.Customer;
-import com.fedomn.todoRefactor.MovieRental.V0.Movie;
-import com.fedomn.todoRefactor.MovieRental.V0.Rental;
+import com.fedomn.todoRefactor.MovieRental.V1.Customer;
+import com.fedomn.todoRefactor.MovieRental.V1.Movie;
+import com.fedomn.todoRefactor.MovieRental.V1.Rental;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -46,6 +46,11 @@ public class CustomerTests {
     public void shouldOutputChangedStatement() throws Exception {
         la.setPriceCode(Movie.REGULAR);
         verifyOutput(dinsdale.statement(), "outputChange");
+    }
+
+    @Test
+    public void shouldOutputHtmlStatement() throws IOException {
+        verifyOutput(dinsdale.htmlStatement(), "outputHtml");
     }
 
     protected void verifyOutput(String actualValue, String fileName) throws IOException {

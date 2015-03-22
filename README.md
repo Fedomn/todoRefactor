@@ -1,4 +1,4 @@
-#重构练习
+#Refactor exercise
 
 ##MovieRental
 * 计算每一位顾客消费金额并打印详单
@@ -8,5 +8,9 @@
 ###需求
 * 1、希望以HTML格式输出
 * 2、改变影片分类规则
+
+####Step 1
+* 分解并重组statement
+
 
 
