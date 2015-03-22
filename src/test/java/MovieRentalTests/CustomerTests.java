@@ -1,8 +1,8 @@
 package MovieRentalTests;
 
-import com.fedomn.todoRefactor.MovieRental.Customer;
-import com.fedomn.todoRefactor.MovieRental.Movie;
-import com.fedomn.todoRefactor.MovieRental.Rental;
+import com.fedomn.todoRefactor.MovieRental.V0.Customer;
+import com.fedomn.todoRefactor.MovieRental.V0.Movie;
+import com.fedomn.todoRefactor.MovieRental.V0.Rental;
 import org.junit.Before;
 import org.junit.Test;
 
