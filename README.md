@@ -24,6 +24,10 @@ KeyWords:
 ###Step 2
 * 运用多态取代与价格相关的条件逻辑
 
+KeyWords:
+>1、最好不要在另一个对象的属性基础上运用switch语句(如Rental里的getCharge方法)，建议使用多态来取代。
+
+>2、使用state模式
 
 
 

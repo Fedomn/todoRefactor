@@ -25,7 +25,7 @@ public class CustomerTests {
     private Movie ran = new Movie("Ran", Movie.REGULAR);
     private Movie la = new Movie("LA Confidential", Movie.NEW_RELEASE);
     private Movie trek = new Movie("Star Trek 13.2", Movie.NEW_RELEASE);
-    private Movie wallace = new Movie("Wallace and Gromit", Movie.CHILDRENS);
+    private Movie wallace = new Movie("Wallace and Gromit", Movie.CHILDREN);
 
     @Before
     public void setUpData(){
