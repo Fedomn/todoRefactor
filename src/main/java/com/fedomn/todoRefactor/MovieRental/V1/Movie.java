@@ -1,5 +1,10 @@
 package com.fedomn.todoRefactor.MovieRental.V1;
 
+import com.fedomn.todoRefactor.MovieRental.V1.model.ChildrenPrice;
+import com.fedomn.todoRefactor.MovieRental.V1.model.NewReleasePrice;
+import com.fedomn.todoRefactor.MovieRental.V1.model.Price;
+import com.fedomn.todoRefactor.MovieRental.V1.model.RegularPrice;
+
 public class Movie {
 
     public static final int CHILDREN = 2;
@@ -46,63 +51,5 @@ public class Movie {
     int getFrequentRenterPoints(int daysRented) {
         return price.getFrequentRenterPoints(daysRented);
     }
-
-
-    abstract class Price {
-        abstract int getPriceCode();
-
-        abstract double getCharge(int daysRented);
-
-        int getFrequentRenterPoints(int daysRented) {
-            return 1;
-        }
-    }
-
-    class ChildrenPrice extends Price {
-        @Override
-        int getPriceCode() {
-            return Movie.CHILDREN;
-        }
-
-        @Override
-        double getCharge(int daysRented) {
-            double result = 1.5;
-            if (daysRented > 3)
-                result += (daysRented - 3) * 1.5;
-            return result;
-        }
-    }
-
-    class NewReleasePrice extends Price {
-        @Override
-        int getPriceCode() {
-            return Movie.NEW_RELEASE;
-        }
-
-        @Override
-        double getCharge(int daysRented) {
-            return daysRented * 3;
-        }
-
-        int getFrequentRenterPoints(int daysRented) {
-            return (daysRented > 1) ? 2 : 1;
-        }
-    }
-
-    class RegularPrice extends Price {
-        @Override
-        int getPriceCode() {
-            return Movie.REGULAR;
-        }
-
-        @Override
-        double getCharge(int daysRented) {
-            double result = 2;
-            if (daysRented > 2)
-                result += (daysRented - 2) * 1.5;
-            return result;
-        }
-    }
-
 
 }
