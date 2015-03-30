@@ -1,33 +1,13 @@
-#Refactor exercise
+Refactor exercise
+---
+[refactor-notes](http://fedomn.github.io/2015/03/24/refactor-notes/)
 
-##MovieRental
-* 计算每一位顾客消费金额并打印详单
-* 计算常客积分，积分根据影片种类而不同
-* 影片分为：普通片、儿童片和新片
+#MovieRental
+简单的入门案例(V0重构前，V1重构后)
 
-###需求
-* 1、希望以HTML格式输出
-* 2、改变影片分类规则
+#ObserveWindow
+Duplicate Observer Data实现案例
 
-####Step 1
-* 分解并重组statement
-* 实现htmlStatement
-
-KeyWords:
->1、绝大多数情况下，函数应该放在它所使用的数据的所属对象内(如amountFor()搬移到Rental里，customer里委托调用rental函数即可)
-
->2、除去临时变量，运用Replace Temp with Query(如thisAmount)
-
->3、提炼函数，放到函数功能对应的责任类里(如getFrequentRenterPoints())
-
-
-###Step 2
-* 运用多态取代与价格相关的条件逻辑
-
-KeyWords:
->1、最好不要在另一个对象的属性基础上运用switch语句(如Rental里的getCharge方法)，建议使用多态来取代。
-
->2、使用state模式
 
 
 
