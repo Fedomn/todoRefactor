@@ -1,9 +1,9 @@
 package com.fedomn.todoRefactor.MovieRental.V1;
 
-import com.fedomn.todoRefactor.MovieRental.V1.model.ChildrenPrice;
-import com.fedomn.todoRefactor.MovieRental.V1.model.NewReleasePrice;
-import com.fedomn.todoRefactor.MovieRental.V1.model.Price;
-import com.fedomn.todoRefactor.MovieRental.V1.model.RegularPrice;
+import com.fedomn.todoRefactor.MovieRental.V1.price.ChildrenPrice;
+import com.fedomn.todoRefactor.MovieRental.V1.price.NewReleasePrice;
+import com.fedomn.todoRefactor.MovieRental.V1.price.Price;
+import com.fedomn.todoRefactor.MovieRental.V1.price.RegularPrice;
 
 public class Movie {
 

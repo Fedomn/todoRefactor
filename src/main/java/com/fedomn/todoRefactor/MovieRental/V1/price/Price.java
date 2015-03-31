@@ -1,4 +1,4 @@
-package com.fedomn.todoRefactor.MovieRental.V1.model;
+package com.fedomn.todoRefactor.MovieRental.V1.price;
 
 public abstract class Price {
 
