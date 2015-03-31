@@ -27,5 +27,11 @@ KeyWords:
 
 >2、使用state模式
 
+##Step 3
+* 采取Form Template Method重构customer类里的statement()方法
 
+KeyWords:
+>1、有些子类，其中的函数以相同的顺序执行类似操作，但是各个操作细节不同。此时，将这些操作放到独立的函数中，并保持相同的签名。
+
+>2、将原函数(statement)上移到超类中，在超类中将那些代表各种不同操作的函数定义为抽象函数。
 

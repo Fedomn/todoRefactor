@@ -1,19 +1,25 @@
 package com.fedomn.todoRefactor.MovieRental.V1;
 
+import com.fedomn.todoRefactor.MovieRental.V1.statement.HtmlStatement;
+import com.fedomn.todoRefactor.MovieRental.V1.statement.TextStatement;
+
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Customer {
 
     private String name;
-    private ArrayList<Rental> rentalList = new ArrayList<Rental>();
+    private ArrayList<Rental> rentals = new ArrayList<Rental>();
 
     public Customer(String name) {
         this.name = name;
     }
 
     public void addRental(Rental arg) {
-        rentalList.add(arg);
+        rentals.add(arg);
+    }
+
+    public ArrayList<Rental> getRentals() {
+        return rentals;
     }
 
     public String getName() {
@@ -21,49 +27,25 @@ public class Customer {
     }
 
     public String statement() {
-        Iterator<Rental> rentals = rentalList.iterator();
-        String result = "Rental Record for " + getName() + "\n";
-        while (rentals.hasNext()) {
-            Rental each = rentals.next();
-
-            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
-        }
-
-        //add footer lines
-        result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
-        result += "You earned " + String.valueOf(getFrequentRenterPoints())
-                + " frequent renter points";
-        return result;
+        return new TextStatement().value(this);
     }
 
     public String htmlStatement() {
-        Iterator<Rental> rentals = rentalList.iterator();
-        String result = "<H1>Rentals for <EM>" + getName() + "</EM></H1><P>";
-        while (rentals.hasNext()) {
-            Rental each = rentals.next();
-
-            result += each.getMovie().getTitle() + ": " + String.valueOf(each.getCharge()) + "<BR>";
-        }
-
-        //add footer lines
-        result += "<P>You owe <EM>" + String.valueOf(getTotalCharge()) + "</EM><P>";
-        result += "On this rental you earned <EM>" + String.valueOf(getFrequentRenterPoints())
-                + "</EM> frequent renter points<P>";
-        return result;
+        return new HtmlStatement().value(this);
     }
 
-    private double getTotalCharge() {
+    public double getTotalCharge() {
         double result = 0;
-        for (Rental aRentalList : rentalList) {
-            result += aRentalList.getCharge();
+        for (Rental aRental : rentals) {
+            result += aRental.getCharge();
         }
         return result;
     }
 
-    private int getFrequentRenterPoints() {
+    public int getFrequentRenterPoints() {
         int result = 0;
-        for (Rental aRentalList : rentalList) {
-            result += aRentalList.getFrequentRenterPoints();
+        for (Rental aRental : rentals) {
+            result += aRental.getFrequentRenterPoints();
         }
         return result;
     }
